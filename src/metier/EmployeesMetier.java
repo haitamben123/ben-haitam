@@ -5,10 +5,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import modele.Employees;
-@Data @AllArgsConstructor @NoArgsConstructor
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+@Service("metier")
 public class EmployeesMetier implements IMetier{
+    @Autowired
+    @Qualifier("Dao")
 
     IDao<Employees,Long> employeesdao;
+
     @Override
     public Employees calculer_SalaireFinal(Long idemp) throws Exception {
         var employees = employeesdao.trouverParId(idemp);

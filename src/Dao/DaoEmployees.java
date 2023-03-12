@@ -4,13 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import modele.Employees;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.time.LocalDateTime;
 
-@Data @AllArgsConstructor @NoArgsConstructor
+@Component("Dao")
 public class DaoEmployees implements IDao{
     public static Set<Employees> BDEmployees(){
         return new HashSet<Employees>(

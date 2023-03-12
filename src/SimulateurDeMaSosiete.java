@@ -3,6 +3,8 @@ import Dao.IDao;
 import metier.EmployeesMetier;
 import metier.IMetier;
 import modele.Employees;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import presentation.EmployeesControleur;
 import presentation.IEmployeesControleur;
 
@@ -14,6 +16,7 @@ import java.util.Scanner;
 
 public class SimulateurDeMaSosiete {
     static Scanner clavier = new Scanner(System.in);
+    static IEmployeesControleur employeesControleur;
 
     private static boolean estUnNombre(String input) {
         try {
@@ -117,6 +120,32 @@ public class SimulateurDeMaSosiete {
         catch (Exception e){
             e.printStackTrace();
         }
+
+    }
+    public static void test4() throws Exception{
+        ApplicationContext context = new AnnotationConfigApplicationContext("Dao","metier","presentation");
+        employeesControleur  = (EmployeesControleur) context.getBean(IEmployeesControleur.class);
+        String rep = "";
+        do {
+            System.out.println("=> [Test 4] calculer le salaire de l'employee <=\n");
+            try {
+                String input = "";
+                while (true) {
+                    System.out.println("=> Entrer l'id du Employee : ");
+                    input = clavier.nextLine();
+                    if (estUnNombre(input)) break;
+                    System.err.println("Entree non valide !!");
+                }
+                Long id = Long.parseLong(input);
+                employeesControleur.afficher_Salaire_Final(id);
+            } catch (Exception e) {
+                System.err.println(e.getMessage());
+            }
+            System.out.println("Voulez vous quittez(oui/non) ? ");
+            rep = clavier.nextLine();
+        }while (!rep.equalsIgnoreCase("oui"));
+        System.out.println(" Au revoir ^_^");
+
 
     }
     public static void main(String[] args) throws Exception {
