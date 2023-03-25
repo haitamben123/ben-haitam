@@ -7,7 +7,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import presentation.EmployeesControleur;
 import presentation.IEmployeesControleur;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
@@ -145,8 +144,6 @@ public class SimulateurDeMaSosiete {
             rep = clavier.nextLine();
         }while (!rep.equalsIgnoreCase("oui"));
         System.out.println(" Au revoir ^_^");
-
-
     }
     public static void main(String[] args) throws Exception {
         test2();
