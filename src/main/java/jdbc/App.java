@@ -53,29 +53,29 @@ public class App {
             try {
                 if (rs != null) {
                     rs.close();
-                    System.out.println("Connexion fermé avec succ ");
+                    System.out.println("Connexion fermé avec succée ");
                 }
             } catch (SQLException e) {
-                System.out.println("Connexion n'est pas fermé av succ");
+                System.out.println("Connexion n'est pas fermé avec succée");
 
             }
             try {
                 if(ps != null)
                 {
                     ps.close();
-                    System.out.println("Connexion ferme av succ ");
+                    System.out.println("Connexion ferme av succée ");
                 }
             } catch (SQLException e) {
-                System.out.println("Connexion n'a pas pu etre femrme");
+                System.out.println("Connexion n'a pas pu etre fermer");
             }
             try {
                 if(connection != null)
                 {
                     connection.close();
-                    System.out.println("Connexion ffermeavec succes ");
+                    System.out.println("Connexion fermer avec succes ");
                 }
             } catch (SQLException e) {
-                System.out.println("Connexion n'a pas pu etre ferme");
+                System.out.println("Connexion n'a pas pu etre fermer");
             }
 
 
