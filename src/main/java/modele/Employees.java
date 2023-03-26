@@ -13,7 +13,7 @@ public class Employees {
     private String prenom;
     private Double salaire;
     private Integer annee_experience;
-    private LocalDateTime date_dembauche;
+    private String date_dembauche;
     private Double salaire_final;
 
     public Long getId() {
@@ -56,11 +56,11 @@ public class Employees {
         this.annee_experience = annee_experience;
     }
 
-    public LocalDateTime getDate_dembauche() {
+    public String getDate_dembauche() {
         return date_dembauche;
     }
 
-    public void setDate_dembauche(LocalDateTime date_dembauche) {
+    public void setDate_dembauche(String date_dembauche) {
         this.date_dembauche = date_dembauche;
     }
 
@@ -72,7 +72,7 @@ public class Employees {
         this.salaire_final = salaire_final;
     }
 
-    public Employees(Long id, String nom, String prenom, Double salaire, Integer annee_experience, LocalDateTime date_dembauche, Double salaire_final) {
+    public Employees(Long id, String nom, String prenom, Double salaire, Integer annee_experience, String date_dembauche, Double salaire_final) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;

@@ -146,7 +146,7 @@ public class SimulateurDeMaSosiete {
         System.out.println(" Au revoir ^_^");
     }
     public static void main(String[] args) throws Exception {
-        test2();
+        test4();
     }
 
 }
